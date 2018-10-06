@@ -1,0 +1,12 @@
+﻿@using (Html.BeginForm("CreateNewAppartment", "Home", FormMethod.Post))
+{
+    <p>Введите адрес</p>
+    <input type="text" name="Street" required placeholder="Улица"/>
+    <input type="number" name="HomeNumber" required placeholder="Дом"/>
+    <input type="text" name="Building" placeholder="Корпус" />
+    <input type="number" name="Room" required placeholder="Квартира"/>
+
+    <br />
+    <button type="submit"> Добавить </button>
+        <br />
+}

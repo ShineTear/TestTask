@@ -1,0 +1,15 @@
+﻿@model TestTask.Models.AddMeterValueModel
+@using (Html.BeginForm("AddNewValue", "Home", FormMethod.Post))
+{
+    <p>Введите новое показание счетчика (предыдущие показания: @Model.LastValue)</p>
+    <input type="number" name="Value" required placeholder="Показания счетчика" step=0.01 min="@Model.LastValue.ToString().Replace(",", ".")" value="@Model.LastValue.ToString().Replace(",", ".")"/>
+    <p>Введите дату следующей проверки (по умолчанию через месяц от передачи показаний)</p>
+    <input type="date" name="NextCheck" required value="@Model.NextCheck.ToString("yyyy-MM-dd")" min="@DateTime.Today" />
+    <input type="text" name="MeterId" hidden value="@Model.MeterId" />
+
+    <br />
+    <button type="submit"> Добавить </button>
+    <br />
+}
+
+

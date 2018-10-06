@@ -1,0 +1,20 @@
+﻿<script src="~/Scripts/HomeScripts.js"></script>
+
+<div class="content">
+    <p>
+        <a href="#blackout" onclick="createNewAppartment()">Добавить новую квартиру</a>
+    </p>
+
+@Html.Action("Filters")
+
+    <div id="showFilterData">
+        @Html.Action("AppartmentList", new TestTask.Models.FilterModel())
+    </div>
+
+    <div id="blackout">
+        <div id="window">
+            <div id="result"></div>
+            <a href="#" class="close">Закрыть окно</a>
+        </div>
+    </div>
+</div>

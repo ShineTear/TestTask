@@ -1,0 +1,51 @@
+﻿@model TestTask.Models.ShowAllChangeViewModel
+
+<p>
+    <span class="header">
+        @Html.DisplayNameFor(model => model.Address)
+    </span>
+    @Html.DisplayFor(modelItem => Model.Address)
+</p>
+
+@foreach (var meter in Model.Meters)
+{
+    <p>
+        <span class="header"> @Html.DisplayNameFor(model => meter.MeterNumber)</span>
+        @Html.DisplayFor(modelItem => meter.MeterNumber)
+        <br />
+        <span class="header">
+            @Html.DisplayNameFor(model => meter.StartValue)
+        </span>
+        @Html.DisplayFor(modelItem => meter.StartValue)
+        <br />
+        <span class="header">
+            @Html.DisplayNameFor(model => meter.InstallationDate)
+        </span>
+        @Html.DisplayFor(modelItem => meter.InstallationDate)
+        <br />
+    </p>
+    if (meter.MeterDatas.Count > 0)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => meter.MeterDatas.First().Value)</th>
+                    <th>@Html.DisplayNameFor(model => meter.MeterDatas.First().ChangeData)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in meter.MeterDatas)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => data.Value)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => data.ChangeData)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

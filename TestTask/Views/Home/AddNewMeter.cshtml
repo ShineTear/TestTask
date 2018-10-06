@@ -1,0 +1,12 @@
+﻿@model int
+@using (Html.BeginForm("AddNewMeter", "Home", FormMethod.Post))
+{
+    <p>Введите идентификатор нового счетчика</p>
+    <input type="text" name="MeterNumber" required placeholder="Идентификатор счетчика" />
+    <input type="text" name="AppartmentId" hidden value="@Model" />
+
+    <br />
+    <button type="submit"> Добавить </button>
+    <br />
+}
+

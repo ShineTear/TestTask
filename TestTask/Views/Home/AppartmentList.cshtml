@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TestTask.Models.AppartmentViewModel>
+
+<table class="table" id="AppartmentTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeterNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastCheckData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextCheckData)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @if (item.MeterNumber != null)
+                {
+                    @Html.DisplayFor(modelItem => item.MeterNumber)
+                    <br />
+                }
+                <a href="#blackout" onclick="addNewMeter('@item.AddressId')">Добавить новый счетчик</a>
+            </td>
+            <td>
+                @if (item.MeterNumber != null)
+                {
+                    if (item.LastValue != 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.LastValue)
+                        <br />
+                    }
+                    <a href="#blackout" onclick="addNewValue('@item.AddressId')">Добавить показания</a>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastCheckData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextCheckData)
+            <td>
+                @Html.HiddenFor(modelItem => item.AddressId)
+                <a href="#blackout" onclick="showAllChange('@item.AddressId')">Показать все изменения</a>
+            </td>
+        </tr>
+    }
+
+</table>

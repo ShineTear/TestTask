@@ -1,0 +1,12 @@
+﻿@model TestTask.Models.FilterViewModel
+
+@using (Ajax.BeginForm("AppartmentList", null, new AjaxOptions { UpdateTargetId = "showFilterData", InsertionMode = InsertionMode.Replace }, new { @id = "AddressSearch" }))
+{
+   @Html.DropDownListFor(model => model.Street, new SelectList(Model.Streets), new { @class = "form-control select2 selectAddr", @id = "selectStreet" })
+    <div id="HouseCheck"></div>
+    @Html.CheckBox("SelectAllAddress")    <label for="SelectAllAddress">Выбрать данные по всем улицам</label>
+    <br />
+    @Html.CheckBox("SelectOnlyBadData")    <label for="SelectOnlyBadData">Выбрать только те квартиры, в которых требуется проверка счетчика</label>
+    <br />
+        <input type="submit" value="Выбрать" />
+}
