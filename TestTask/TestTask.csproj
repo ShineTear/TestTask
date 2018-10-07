@@ -204,6 +204,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataBase\Code\FunctionWithDB.cs" />
     <Compile Include="DataBase\Context\AppartmentContext.cs" />
     <Compile Include="DataBase\DataBaseConfig.cs" />
     <Compile Include="DataBase\Entities\Appartment.cs" />

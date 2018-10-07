@@ -76,3 +76,4 @@ C:\Users\Marishka\Documents\Visual Studio 2015\Projects\TestTask\TestTask\obj\De
 C:\Users\Marishka\Documents\Visual Studio 2015\Projects\TestTask\TestTask\obj\Debug\TestTask.csproj.GenerateResource.Cache
 C:\Users\Marishka\Documents\Visual Studio 2015\Projects\TestTask\TestTask\obj\Debug\TestTask.dll
 C:\Users\Marishka\Documents\Visual Studio 2015\Projects\TestTask\TestTask\obj\Debug\TestTask.pdb
+C:\Users\Marishka\Documents\Visual Studio 2015\Projects\TestTask\TestTask\obj\Debug\TestTask.csprojResolveAssemblyReference.cache
