@@ -16,6 +16,6 @@ namespace TestTask.DataBase.Entities
 
 
         public int MeterId { get; set; }
-        public Meter Meter { get; set; }
+        public virtual Meter Meter { get; set; }
     }
 }

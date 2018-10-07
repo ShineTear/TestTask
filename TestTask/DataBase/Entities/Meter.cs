@@ -22,7 +22,7 @@ namespace TestTask.DataBase.Entities
 
         [ForeignKey("Appartment")]
         public int AppartmentId { get; set; }
-        public Appartment Appartment { get; set; }
+        public virtual Appartment Appartment { get; set; }
         public virtual ICollection<MeterData> MeterDatas { get; set; }
 
         public Meter()
