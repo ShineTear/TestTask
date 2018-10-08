@@ -174,7 +174,7 @@ namespace TestTask.DataBase.Code
 
             using (AppartmentContext db = new AppartmentContext())
             {
-                result.AddRange(db.Appartments.Where(x => x.Address.Contains(street)).Select(x => x.Address).ToList().Select(x => (x.Split(' '))[1]).ToList());
+                result.AddRange(db.Appartments.Where(x => x.Address.Contains(street)).Select(x => x.Address).ToList().Select(x => (x.Split(' '))[1]).Distinct().ToList());
             }
             return result;
         }
